@@ -1,0 +1,15 @@
+{
+    "name": "monitoring-sdk",
+    "version": "1.0.0",
+    "description": "JavaScript SDK for web monitoring",
+    "main": "dist/sdk.js",
+    "scripts": {
+      "build": "webpack --mode=production",
+      "dev": "webpack --mode=development --watch"
+    },
+    "devDependencies": {
+      "webpack": "^5.88.2",
+      "webpack-cli": "^5.1.4",
+      "terser-webpack-plugin": "^5.3.9"
+    }
+  }
