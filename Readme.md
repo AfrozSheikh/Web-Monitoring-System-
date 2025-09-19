@@ -1,118 +1,111 @@
 🌐 Web Monitoring Platform
-A comprehensive SaaS-based web application monitoring platform that helps developers track performance metrics, errors, and user interactions on their websites in real-time.
 
-✨ Features
+A SaaS-based monitoring solution that empowers developers to track performance metrics, errors, and user interactions in real time — ensuring faster issue resolution, improved reliability, and better user experience.
+
+✨ Key Features
 📊 Performance Monitoring
-Page Load Time - Track how long your pages take to load
 
-Core Web Vitals - Monitor FCP, LCP, TTFB, and other vital metrics
+Page Load Time – Measure how long pages take to load
 
-Real-time Analytics - View performance data with beautiful charts
+Core Web Vitals – Track FCP, LCP, TTFB, and more
+
+Real-time Analytics – Interactive charts for insights
 
 🚨 Error Tracking
-JavaScript Errors - Capture all client-side errors automatically
 
-Promise Rejections - Track unhandled promise rejections
+JavaScript Errors – Capture client-side exceptions automatically
 
-Detailed Error Reports - Get stack traces, line numbers, and source information
+Promise Rejections – Monitor unhandled rejections
+
+Detailed Reports – Stack traces, line numbers & source info
 
 🔔 Smart Alerts
-Custom Thresholds - Set performance and error thresholds
 
-Email Notifications - Get alerted when issues occur
+Custom Thresholds – Define your own rules
 
-Flexible Conditions - Configure alerts based on multiple metrics
+Email Notifications – Get notified instantly
+
+Flexible Conditions – Configure alerts across multiple metrics
 
 🛠️ Easy Integration
-Lightweight SDK - Just 5KB minified, zero dependencies
 
-Simple Setup - Add a few lines of code to your website
+Lightweight SDK – Just 5KB, async, and zero dependencies
 
-API Access - RESTful API for custom integrations
+Plug & Play – Add a few lines of code to your site
+
+API Access – RESTful APIs for custom integrations
 
 🚀 Quick Start
-Prerequisites
+🔧 Prerequisites
+
 Node.js 14+
 
 MongoDB 4.4+
 
 npm or yarn
 
-Installation
-Clone the repository
-
-bash
+⚡ Setup
+# Clone the repository
 git clone https://github.com/AfrozSheikh/Web-Monitoring-System-.git
 cd web-monitoring-platform
-Setup Backend
 
-bash
+
+Backend
+
 cd backend
 npm install
-cp .env.example .env
-# Edit .env with your configuration
+cp .env.example .env   # Update env vars
 npm run dev
-Setup Frontend
 
-bash
+
+Frontend
+
 cd frontend
 npm install
 npm run dev
-Build SDK (Optional)
 
-bash
+
+SDK Build (Optional)
+
 cd sdk
 npm install
 npm run build
-Access the application
 
-Frontend: http://localhost:3000
 
-Backend API: http://localhost:5000
+Access App
 
-Test website: http://localhost:5000/test
+Frontend → http://localhost:3000
 
-Environment Configuration
-Create a .env file in the backend directory:
+Backend API → http://localhost:5000
 
-env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/web_monitoring
-JWT_SECRET=your_super_secret_jwt_key_here
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_app_password
-FRONTEND_URL=http://localhost:3000
+Test Website → http://localhost:5000/test
+
 🎯 SDK Integration
-Add monitoring to your website with just a few lines of code:
-
-html
 <script src="https://yourdomain.com/sdk.js"></script>
 <script>
   MonitoringSDK.init({
-    apiKey: "YOUR_API_KEY_HERE",
+    apiKey: "YOUR_API_KEY",
     trackErrors: true,
     trackPerformance: true,
-    // Optional: sample rate for high-traffic sites
-    sampleRate: 0.5
+    sampleRate: 0.5 // optional for high-traffic sites
   });
 </script>
+
 📖 API Documentation
-Authentication Endpoints
+🔐 Authentication
 Method	Endpoint	Description
 POST	/api/auth/register	Register a new user
-POST	/api/auth/login	Login user
-GET	/api/auth/me	Get current user
-Data Endpoints
+POST	/api/auth/login	Login existing user
+GET	/api/auth/me	Get current user info
+📡 Data Endpoints
 Method	Endpoint	Description
-POST	/api/logs	Send monitoring data (used by SDK)
-GET	/api/dashboard	Get dashboard analytics
-GET	/api/alerts	Get user alerts
+POST	/api/logs	Send monitoring data (SDK)
+GET	/api/dashboard	Get performance analytics
+GET	/api/alerts	Fetch user alerts
 POST	/api/alerts	Create a new alert
-Example API Request
-javascript
-// Sending performance data
+
+Example Request
+
 fetch('/api/logs', {
   method: 'POST',
   headers: {
@@ -122,115 +115,86 @@ fetch('/api/logs', {
   body: JSON.stringify({
     performanceMetrics: {
       loadTime: 1450,
-      firstContentfulPaint: 1200,
-      // ... other metrics
+      firstContentfulPaint: 1200
     }
   })
 });
-🏗️ Architecture
-text
+
+🏗️ Project Architecture
 web-monitoring-platform/
-├── backend/          # Node.js + Express API
-│   ├── models/       # MongoDB models
-│   ├── routes/       # API routes
-│   ├── middleware/   # Custom middleware
-│   └── utils/        # Helper functions
-├── frontend/         # React dashboard
-│   ├── components/   # React components
-│   ├── context/      # React context
-│   └── services/     # API services
-└── sdk/              # Monitoring SDK
-    └── dist/         # Built SDK files
-📊 Dashboard Features
-Real-time Metrics: Visualize performance data with interactive charts
+├── backend/        # Node.js + Express API
+│   ├── models/     
+│   ├── routes/     
+│   ├── middleware/ 
+│   └── utils/      
+├── frontend/       # React + Tailwind Dashboard
+│   ├── components/ 
+│   ├── context/    
+│   └── services/   
+└── sdk/            # Lightweight JS SDK
+    └── dist/       
 
-Error Analytics: View error trends and patterns
+📊 Dashboard Highlights
 
-API Key Management: Copy and regenerate API keys easily
+Real-time metrics visualization
 
-Alert Configuration: Set up custom monitoring alerts
+Error trend analysis
 
-Filtering: Filter data by date, URL, browser, and more
+API key management with copy/regenerate
 
-🛡️ Security Features
-JWT-based authentication
+Alert configuration UI
 
-API key validation
+Advanced filtering (date, URL, browser, etc.)
 
-CORS protection
+🛡️ Security
 
-Rate limiting
-
-Helmet.js security headers
-
-Password hashing with bcrypt
+✔️ JWT-based authentication
+✔️ API Key validation
+✔️ Rate limiting
+✔️ CORS protection
+✔️ Helmet.js headers
+✔️ Password hashing with bcrypt
 
 🧪 Testing
-bash
-# Run backend tests
-cd backend
-npm test
+# Backend
+cd backend && npm test
 
-# Run frontend tests
-cd frontend
-npm test
+# Frontend
+cd frontend && npm test
 
-# Test the SDK
-cd sdk
-npm test
+# SDK
+cd sdk && npm test
+
 🚢 Deployment
-Using Docker
-bash
-# Build and run with Docker Compose
+Docker
 docker-compose up -d
-Manual Deployment
-Build the frontend
 
-bash
-cd frontend
-npm run build
-Setup production environment variables
+Manual
+# Build frontend
+cd frontend && npm run build
 
-bash
-cd backend
-# Update .env with production values
-Start the production server
+# Start backend
+cd backend && npm start
 
-bash
-npm start
 🤝 Contributing
-We welcome contributions! Please feel free to submit a Pull Request.
 
-Fork the project
+Fork the repo
 
-Create your feature branch (git checkout -b feature/AmazingFeature)
+Create feature branch → git checkout -b feature/NewFeature
 
-Commit your changes (git commit -m 'Add some AmazingFeature')
+Commit changes → git commit -m 'Add new feature'
 
-Push to the branch (git push origin feature/AmazingFeature)
+Push branch → git push origin feature/NewFeature
 
 Open a Pull Request
 
 📄 License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
 
-🆘 Support
-If you have any questions or need help, please:
+Licensed under the MIT License.
+.
 
-Check the FAQ
+🔗 Open an Issue
 
-Open an issue
+📚 Check FAQ
 
-Contact us at support@webmonitoring.com
-
-🙏 Acknowledgments
-Chart visualizations powered by Recharts
-
-Icons from Feather Icons
-
-UI components inspired by Tailwind UI
-
-<div align="center">
-Made with ❤️ by the Afroz
-
-</div>
+<div align="center"> Made with ❤️ by <b>Afroz</b> </div>
