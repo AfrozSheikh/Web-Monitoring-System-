@@ -63,7 +63,7 @@
     <script>
         // Initialize the SDK
         MonitoringSDK.init({
-            apiKey: "d6796cfca3956132a41f7c781df18f2be98ed2f1b1a189bc4d03c5835dae7372",
+            apiKey: "878b0efc6d093a68a25524e730e3f7120544fdd5296601369e609341b5abad84",
             endpoint: "http://localhost:5000/api/logs", 
             trackErrors: true,
             trackPerformance: true,
@@ -80,11 +80,11 @@
         }
 
         // Test functions (real-world errors)
-        function testError() {
-            logToConsole('Triggering undefined property error...');
-            const obj = {};
-            console.log(obj.user.name); // property access on undefined
-        }
+        // function testError() {
+        //     logToConsole('Triggering undefined property error...');
+        //     const obj = {};
+        //     console.log(obj.user.name); // property access on undefined
+        // }
 
         function testPromiseRejection() {
             logToConsole('Triggering unhandled promise rejection...');
